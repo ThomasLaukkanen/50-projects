@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  font-family: 'Comfortaa', cursive;
+  /* font-family: 'Fraunces', serif; */
+  /* font-family: 'Rubik', sans-serif; */
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  flex: 1;
+  margin-top: 8px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+  margin: 8px;
+}
+
+.panel h3 {
+  font-size: 2rem;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 8;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+h1 {
+  font-size: 8rem;
+  transform: rotate(-90deg);
+  text-align: center;
+  margin: 0;
+}
+.rotate {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 100vw;
+  }
+
+  h1 {
+    transform: initial;
+    font-size: 2rem;
+  }
+
+  .container {
+    flex-direction: column;
+    height: 80vh;
+  }
+  body {
+    flex-direction: column;
+  }
+
+  .panel h3 {
+    opacity: 1;
+    font-size: 1.5rem;
+    transition: font-size 0.3s ease-in 0.4s;
+    bottom: 10px;
+  }
+  .panel.active h3 {
+    font-size: 2rem;
+    transition: font-size 0.3s ease-in 0.4s;
+  }
+}
